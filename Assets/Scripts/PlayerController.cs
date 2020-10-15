@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     private float turnSpeed = 35f;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() //physics update
     {
         float leftRight = Input.GetAxis("Horizontal");
         float forwardBack = Input.GetAxis("Vertical");
         //vertical input
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardBack);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardBack); //forwards based on delta, speed and vertical input
         //horizontal input
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * leftRight);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * leftRight); //turning based on delta, turnSpeed and horizontal input
     }
 }
